@@ -1,0 +1,161 @@
+@import "reset";
+@import "utilites";
+
+
+body{
+    background-color: $main-color;
+    .max--width{
+        max-width: 1440px;
+        margin: auto;
+    }
+
+    .header{
+        width: 100%;
+        height: 60px;
+        color: $secondary-color;
+        @include border-bottom(1px, solid, $secondary-color);
+        display: flex;
+
+        &--hover:hover{
+            transition: all .5s ease;
+            color: lighten($secondary-color, 30%);
+        }
+
+        &__hamburger-menu{
+            width: 4%;
+            height: 60px;
+            cursor: pointer;
+            @include flex(center, center, row);
+            @extend .header--hover;
+        }
+
+        &__logo{
+            width: 86%;
+            @include border-left(1px, solid, $secondary-color);
+            @include border-right(1px, solid, $secondary-color);
+            text-align: center;
+
+            h1{
+                font-size: 22px;
+                font-weight: 400;
+                text-transform: uppercase;
+                letter-spacing: 8px;
+                cursor: pointer;
+                @extend .header--hover;
+            }
+
+        }
+
+        &__search{
+            width: 4%;
+            height: 60px;
+            @include flex(center, center, row);
+            @include border-right(1px, solid, $secondary-color);
+            @extend .header--hover;
+            cursor: pointer;
+        }
+
+        &__login{
+            width: 4%;
+            height: 60px;
+            @include flex(center, center, row);
+            @extend .header--hover;
+            cursor: pointer;
+        }
+    }
+
+    main{
+        display: flex;
+        height: 80vh;
+
+        .story-content{
+            @include flex(flex-start, flex-start, column);
+            width: 35%;
+            color: $primary-color;
+
+            &__head{
+                font-size: 84px;
+                font-weight: 400;
+            }
+
+            &__text{
+                font-size: 14px;
+            }
+
+            &__btn{
+                width: 220px;
+                height: 46px;
+                background: none;
+                @include border(2px, solid, $primary-color);
+                border-radius: 40px;
+                color: $primary-color;
+                font-size: 16px;
+                font-weight: 400;
+                overflow: hidden;
+                transform: translate(0);
+                cursor: pointer;
+
+                &::before{
+                    content: '';
+                    position: absolute;
+                    background-color: $primary-color;
+                    width: 8%;
+                    top: 0;
+                    left: 0;
+                    bottom: - 180px;
+                    transform: rotate(-16deg);
+                    filter: blur(6px);
+                }
+
+                &:hover::before{
+                    left: calc(100% + 180px);
+                    transition: all 1s;
+                }
+            }
+        }
+
+        .slider-content{
+            width: 65%;
+            &__inner{
+                width: 100% !important;
+                height: 80%;
+                @include flex(flex-start, center, row);
+                overflow: hidden;
+
+                img{
+                    width: 100% !important;
+                    height: 450px;
+                    object-fit: cover;
+                }
+            }
+
+            &__radio-btn{
+                @include flex(center, center, row);
+                input{
+                    display: none;
+                }
+
+                label{
+                    width: 10px;
+                    height: 10px;
+                    @include border(1px, solid, $primary-color);
+                    border-radius: 50%;
+                    display: inline-block;
+                    position: relative;
+
+                    span{
+                        width: 100%;
+                        height: 100%;
+                        background-color: $primary-color;
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        border-radius: 50%;
+                        
+                    }
+                }
+            }
+        }
+    }
+}

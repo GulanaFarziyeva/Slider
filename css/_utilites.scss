@@ -1,0 +1,76 @@
+$main-color: #000;
+$secondary-color: #99A3A4;
+$primary-color:#f7f1e3;
+
+$margin: 1, 2, 3, 4, 5;
+
+@each $i in $margin {
+    .mt-#{$i}{
+        margin-top: $i * 1em;
+    }
+    .mb-#{$i}{
+        margin-bottom: $i * 1em;
+    }
+    
+    .ml-#{$i}{
+        margin-left:$i * 1em;
+    }
+    .mr-#{$i}{
+        margin-right:$i * 1em;
+    }
+
+    .pt-#{$i}{
+        padding-top: $i * 1em;
+    }
+
+    .pb-#{$i}{
+        padding-bottom: $i * 1em;
+    }
+
+    .pl-#{$i}{
+        padding-left: $i * 1em;
+    }
+
+    .pr-#{$i}{
+        padding-right: $i * 1em;
+    }
+}
+
+@mixin flex ($justify, $aligin, $direction) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $aligin;
+    flex-direction: $direction;
+}
+
+
+@mixin border-left ($witdth, $style, $color) {
+    border-left-width: $witdth;
+    border-left-style: $style;
+    border-left-color: $color;  
+}
+
+@mixin border-right ($witdth, $style, $color) {
+    border-right-width: $witdth;
+    border-right-style: $style;
+    border-right-color: $color;  
+}
+
+@mixin border-top ($witdth, $style, $color) {
+    border-top-width: $witdth;
+    border-top-style: $style;
+    border-top-color: $color;  
+}
+
+@mixin border-bottom ($witdth, $style, $color) {
+    border-bottom-width: $witdth;
+    border-bottom-style: $style;
+    border-bottom-color: $color;  
+}
+
+@mixin border ($witdth, $style, $color) {
+    border-width: $witdth;
+    border-style: $style;
+    border-color: $color;  
+}
+
