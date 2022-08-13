@@ -70,11 +70,11 @@ body{
 
         .story-content{
             @include flex(flex-start, flex-start, column);
-            width: 35%;
+            width: 30%;
             color: $primary-color;
 
             &__head{
-                font-size: 84px;
+                font-size: 72px;
                 font-weight: 400;
             }
 
@@ -115,15 +115,30 @@ body{
         }
 
         .slider-content{
-            width: 65%;
+            width: 70%;
+            position: relative;
+                &__left{
+                    color: $primary-color;
+                    left: -3%;
+                    position: absolute;
+                    top: 30%;
+                    width: 40px;
+                }
+                &__right{
+                    position: absolute;
+                    top: 30%;
+                    right: -3%;
+                    width: 40px;
+                }
+            
             &__inner{
                 width: 100% !important;
                 height: 80%;
-                @include flex(flex-start, center, row);
+                @include flex(center, center, row);
                 overflow: hidden;
 
                 img{
-                    width: 100% !important;
+                    width: 90% !important;
                     height: 450px;
                     object-fit: cover;
                 }
