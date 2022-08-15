@@ -320,16 +320,16 @@ body main .slider-content__inner img {
   -o-object-fit: cover;
      object-fit: cover;
 }
-body main .slider-content__radio-btn {
+body main .slider-content__radio {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: row;
 }
-body main .slider-content__radio-btn input {
+body main .slider-content__radio input {
   display: none;
 }
-body main .slider-content__radio-btn label {
+body main .slider-content__radio label {
   width: 10px;
   height: 10px;
   border-width: 1px;
@@ -339,13 +339,14 @@ body main .slider-content__radio-btn label {
   display: inline-block;
   position: relative;
 }
-body main .slider-content__radio-btn label span {
+body main .slider-content__radio label span {
   width: 100%;
   height: 100%;
   background-color: #f7f1e3;
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
   border-radius: 50%;
+  display: none;
+  transform: translate(-50%, -50%);
 }/*# sourceMappingURL=main.css.map */
